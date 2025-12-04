@@ -1,0 +1,31 @@
+<section>
+  <h1>Nos comptes bancaires</h1>
+
+  <!-- Avec le routage ci-dessous (commence par un '/'),
+    on redirige vers localhost:4200/chemin_du-router-link
+  -->
+
+  <!--
+  <ul class="menu bg-base-200 w-56 m-2 p-2 mt-10">
+    <li><a routerLink="/comptes-bancaires/ajouter">Ajout d'un nouveau compte</a></li>
+    <li><a routerLink="/comptes-bancaires/details">Détails</a></li>
+    <li><a routerLink="/comptes-bancaires/depot-et-retrait">dépot / retrait</a></li>
+  </ul>-->
+
+  <!-- Avec le routage ci-dessous (ne commence PAS par un '/'),
+      on complète l'url affiché par ce qu'on met dans le routerLink
+    -->
+  <ul class="menu bg-base-200 w-56 m-2 p-2 mt-10">
+    <li><a routerLink="ajouter">Ajout d'un nouveau compte</a></li>
+    <li><a routerLink="details">Détails</a></li>
+    <li><a routerLink="depot-et-retrait">dépot / retrait</a></li>
+  </ul>
+
+  <!-- router-outlet est indispensable pour le routage
+    router-outlet est remplacé par le composant associé à la route enfant -->
+  <router-outlet />
+
+  <!--  <li><a class="menu-active">Item 2</a></li> -->
+
+
+</section>

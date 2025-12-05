@@ -1,0 +1,38 @@
+<div class="overflow-x-auto">
+  <table class="table table-zebra">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th>userId</th>
+        <th>N° de compte</th>
+        <th>Type de compte</th>
+        <th>Solde</th>
+        <th>2e exemple</th>
+        <th>Date de dernière transaction</th>
+        <th>2e exemple</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(account of accounts() ; track account.id){
+      <tr>
+        <th>{{account.userId}}</th>
+        <th>{{account.accountNumber}}</th>
+        <th>{{account.accountType}}</th>
+        <th>{{account.solde | currency: 'EUR' : 'symbol' : '1.2-2' }}</th>
+
+        <!-- pour utiliser la locale ja-JP, il faut la rajouter au niveau des providers
+          (app.config)
+        -->
+        <th>{{account.solde | currency: 'EUR' : 'symbol' : '1.2-2' : 'ja-JP' }}</th>
+
+        <th>{{account.lastTransactionDate | date: "longDate"}}</th>
+        <th>{{account.lastTransactionDate | date: "dd/MM/yyyy"}}</th>
+        <th>
+          <button (click)="handleClick(account)" class="btn btn-primary">Dépot / retrait</button>
+        </th>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

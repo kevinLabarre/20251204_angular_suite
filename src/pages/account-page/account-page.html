@@ -1,6 +1,15 @@
 <section>
   <h1>Nos comptes bancaires</h1>
 
+  <h2>Nos comptes</h2>
+
+  @if(accounts().length > 0){
+  <p>solde: {{accounts()[1].solde}}</p>
+  <app-accounts-table [accounts]="accounts()" />
+  }
+
+  <h2>Onglets de navigation</h2>
+
   <!-- Avec le routage ci-dessous (commence par un '/'),
     on redirige vers localhost:4200/chemin_du-router-link
   -->

@@ -1,1 +1,13 @@
-<p>deposit-and-withdrawal works!</p>
+<section>
+  <h1>Dépot / retrait</h1>
+
+  @if(account().accountNumber){
+  <p>{{account().accountNumber}}</p>
+  <p>{{account().solde}}</p>
+  } @else {
+  <p><strong>Veuillez choisir un compte, en cliquant sur un des boutons du tableaux ci-dessus</strong></p>
+  }
+
+
+
+</section>

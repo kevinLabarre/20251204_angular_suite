@@ -6,6 +6,20 @@
   @if(accounts().length > 0){
   <p>solde: {{accounts()[1].solde}}</p>
   <app-accounts-table [accounts]="accounts()" />
+  } @else {
+  <!-- Si on n'a pas de compte Et pas d'erreur : c'est qu'on charge les données -->
+  @if(!error()){
+  <div class="w-fit m-auto">
+    <div class="skeleton h-180 w-180"></div>
+  </div>
+  }
+  }
+
+  @if(error()) {
+  <p class="text-red-500">Une erreur est survenue</p>
+
+  <!-- Si nos message d'erreur reçu du backend sont prévus pour être affichés -->
+  <p>Message d'erreur: {{error()!.message}}</p>
   }
 
   <h2>Onglets de navigation</h2>

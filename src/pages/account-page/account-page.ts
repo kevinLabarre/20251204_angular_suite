@@ -27,14 +27,19 @@ export class AccountPage implements OnInit {
   private accountService = inject(AccountService)
 
   accounts = signal<IAccount[]>([] as IAccount[])
+  error = signal<Error | null>(null)
 
   loadAccounts() {
+    this.error.set(null)
     this.accountService.getAccounts().subscribe({
       next: (resp) => {
         this.accounts.set(resp)
         console.log(this.accounts())
       },
-      error: () => { }
+      error: (e) => {
+        this.error.set(e)
+        console.error(e)
+      }
     })
   }
 

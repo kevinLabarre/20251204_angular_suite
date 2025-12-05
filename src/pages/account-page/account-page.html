@@ -16,16 +16,16 @@
       on complète l'url affiché par ce qu'on met dans le routerLink
     -->
   <ul class="menu bg-base-200 w-56 m-2 p-2 mt-10">
-    <li><a routerLink="ajouter">Ajout d'un nouveau compte</a></li>
-    <li><a routerLink="details">Détails</a></li>
-    <li><a routerLink="depot-et-retrait">dépot / retrait</a></li>
+    <li><a routerLinkActive="menu-active" routerLink="ajouter">Ajout d'un
+        nouveau compte</a></li>
+    <li><a routerLinkActive="menu-active" routerLink="details">Détails</a>
+    </li>
+    <li><a routerLinkActive="menu-active" routerLink="depot-et-retrait">dépot
+        / retrait</a></li>
   </ul>
 
   <!-- router-outlet est indispensable pour le routage
     router-outlet est remplacé par le composant associé à la route enfant -->
   <router-outlet />
-
-  <!--  <li><a class="menu-active">Item 2</a></li> -->
-
 
 </section>
